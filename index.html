@@ -1,536 +1,660 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olufemi Gbolahan — Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="logo" data-aos="fade-right">
-                <a href="#">Portfolio</a>
-            </div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link" data-aos="fade-down" data-aos-delay="100">Home</a></li>
-                <li><a href="#about" class="nav-link" data-aos="fade-down" data-aos-delay="200">About</a></li>
-                <li><a href="#statistics" class="nav-link" data-aos="fade-down" data-aos-delay="300">Statistics</a></li>
-                <li><a href="#skills" class="nav-link" data-aos="fade-down" data-aos-delay="400">Skills</a></li>
-                <li><a href="#projects" class="nav-link" data-aos="fade-down" data-aos-delay="500">Projects</a></li>
-                <li><a href="#contact" class="nav-link" data-aos="fade-down" data-aos-delay="600">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 data-aos="fade-up">Hi, I'm <span class="highlight">Olufemi Gbolahan</span></h1>
-                <h2 data-aos="fade-up" data-aos-delay="200">I'm a <span class="typed-text"></span></h2>
-                <p data-aos="fade-up" data-aos-delay="400">Passionate about creating beautiful and functional web experiences</p>
-                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
-                    <a href="#contact" class="btn primary-btn">Hire Me</a>
-                    <a href="#projects" class="btn secondary-btn">My Work</a>
-                </div>
-                <div class="social-icons" data-aos="fade-up" data-aos-delay="800">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/tk_gbolahan?igsh=cDg0NTZocnN2MXV3&utm_source=qr" class="social-icon"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
-                <div class="shape"></div>
-            </div>
-        </div>
-        <div class="scroll-down">
-            <a href="#about"><i class="fas fa-chevron-down"></i></a>
-        </div>
-    </section>
+<!-- ════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="#home" class="logo">OG<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#projects" onclick="closeMenu()">Work</a></li>
+    <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+    <li><a href="#contact" onclick="closeMenu()" class="nav-cta">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-aos="fade-up">About Me</h2>
-                <div class="underline" data-aos="fade-up" data-aos-delay="200"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-image" data-aos="fade-right">
-                    <img src="myimage2..png" alt="Profile Picture">
-                </div>
-                <div class="about-text" data-aos="fade-left">
-                    <h3>Who am I?</h3>
-                    <p>I am a passionate web developer with a strong foundation in both front-end and back-end technologies. With a keen eye for design and a commitment to creating seamless user experiences, I strive to build applications that are not only functional but also aesthetically pleasing.</p>
-                    <p>My journey in tech began with a curiosity about how websites work, which led me to dive deep into the world of web development. Since then, I've been constantly learning and improving my skills to stay updated with the latest industry trends.</p>
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>Gbolahanabiodun92@gmail.com</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+234-812-6398-496</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Lagos, Nigeria</span>
-                        </div>
-                    </div>
-                    <a href="resume.docx" class="btn primary-btn">Download CV</a>
-                </div>
-            </div>
+
+<!-- ════════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<section id="home">
+  <div class="hero-bg-text">DEV</div>
+
+  <div class="hero-left">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      Available for freelance &amp; full-time roles
+    </div>
+
+    <h1>
+      Building web<br>
+      products that<br>
+      <em>actually work.</em>
+    </h1>
+
+    <p class="hero-sub">
+      I'm <strong>Olufemi Gbolahan</strong> — a full-stack web developer based in Lagos, Nigeria.
+      I design and build fast, modern web applications for businesses and startups.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">
+        See My Work <i class="fas fa-arrow-right" style="font-size:0.8rem"></i>
+      </a>
+      <a href="resume.docx" class="btn-outline" download>
+        Download CV
+      </a>
+    </div>
+
+    <div class="hero-socials">
+      <span>Find me on</span>
+      <a href="https://github.com/Darth-vader1" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/gbolahan-emmanuel-olufemi-abiodun-5b3824312" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://x.com/Abiodun38965956" target="_blank" title="Twitter/X"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/2348126398496" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <!-- ★ REPLACE: swap src="profile.jpg" for your photo path -->
+        <img src="myimage.JPG" alt="Olufemi Gbolahan"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="hero-photo-placeholder" style="display:none">
+          <i class="fas fa-user"></i>
+          <p>Add your photo here</p>
         </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section id="statistics" class="statistics">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-aos="fade-up">My Statistics</h2>
-                <div class="underline" data-aos="fade-up" data-aos-delay="200"></div>
-            </div>
-            <div class="stats-container">
-                <div class="stats-grid">
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="stat-number" data-count="12">0</div>
-                        <h4>Clients Handled</h4>
-                    </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="stat-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <div class="stat-number" data-count="5">0</div>
-                        <h4>Projects Completed</h4>
-                    </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="stat-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="stat-number" data-count="2">0</div>
-                        <h4>Awards Won</h4>
-                    </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-                        <div class="stat-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="stat-number" data-count="3">0</div>
-                        <h4>Years Experience</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="skills-percentage" data-aos="fade-up">
-                <h3>Skills Proficiency</h3>
-                <div class="skill-bars">
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>HTML</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill html" style="width: 95%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>CSS</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill css" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>JavaScript</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill js" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>React</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill react" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>Python</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill python" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>SQL</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill sql" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-icon">🚀</div>
+        <div class="hero-badge-text">
+          <strong>3 Years Experience</strong>
+          <span>Frontend &amp; Backend</span>
         </div>
-    </section>
+      </div>
+      <div class="hero-badge2">
+        <span>12+</span>
+        Clients served
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Tools Section -->
-    <section id="tools" class="tools">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-aos="fade-up">Some Tools I'm Proficient With</h2>
-                <div class="underline" data-aos="fade-up" data-aos-delay="200"></div>
-            </div>
-            <div class="tools-grid">
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="tool-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" alt="Meta">
-                        <p>Meta</p>
-                    </div>
-                </div>
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="150">
-                    <div class="tool-content">
-                        <img src="https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg" alt="Canva">
-                        <p>Canva</p>
-                    </div>
-                </div>
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tool-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/2295px-Google_Drive_icon_%282020%29.svg.png" alt="Google Drive">
-                        <p>Google Drive</p>
-                    </div>
-                </div>
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="250">
-                    <div class="tool-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg/1200px-Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg.png" alt="Microsoft PowerPoint">
-                        <p>PowerPoint</p>
-                    </div>
-                </div>
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="350">
-                    <div class="tool-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="Gmail">
-                        <p>Gmail</p>
-                    </div>
-                </div>
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="tool-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/CorelDraw_logo.svg/2560px-CorelDraw_logo.svg.png" alt="Corel Draw">
-                        <p>Corel Draw</p>
-                    </div>
-                </div>
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="500">
-                    <div class="tool-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/2203px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png" alt="Microsoft Excel">
-                        <p>Excel</p>
-                    </div>
-                </div>
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="550">
-                    <div class="tool-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png" alt="Google Sheets">
-                        <p>Google Sheets</p>
-                    </div>
-                </div>
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="600">
-                    <div class="tool-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Microsoft_Office_Word_%282019%E2%80%93present%29.svg/2203px-Microsoft_Office_Word_%282019%E2%80%93present%29.svg.png" alt="Microsoft Word">
-                        <p>Word</p>
-                    </div>
-                </div>
-            </div>
+
+<!-- ════════════════════════════════════
+     MARQUEE STRIP
+════════════════════════════════════ -->
+<div class="strip">
+  <div class="strip-inner" id="stripInner">
+    <span class="strip-item"><i class="fas fa-star"></i> Frontend Development</span>
+    <span class="strip-item"><i class="fas fa-star"></i> Backend Development</span>
+    <span class="strip-item"><i class="fas fa-star"></i> React Applications</span>
+    <span class="strip-item"><i class="fas fa-star"></i> Django &amp; Python</span>
+    <span class="strip-item"><i class="fas fa-star"></i> Database Design</span>
+    <span class="strip-item"><i class="fas fa-star"></i> REST APIs</span>
+    <span class="strip-item"><i class="fas fa-star"></i> UI/UX Design</span>
+    <span class="strip-item"><i class="fas fa-star"></i> Lagos · Nigeria · Remote</span>
+    <!-- duplicated for seamless loop -->
+    <span class="strip-item"><i class="fas fa-star"></i> Frontend Development</span>
+    <span class="strip-item"><i class="fas fa-star"></i> Backend Development</span>
+    <span class="strip-item"><i class="fas fa-star"></i> React Applications</span>
+    <span class="strip-item"><i class="fas fa-star"></i> Django &amp; Python</span>
+    <span class="strip-item"><i class="fas fa-star"></i> Database Design</span>
+    <span class="strip-item"><i class="fas fa-star"></i> REST APIs</span>
+    <span class="strip-item"><i class="fas fa-star"></i> UI/UX Design</span>
+    <span class="strip-item"><i class="fas fa-star"></i> Lagos · Nigeria · Remote</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     ABOUT
+════════════════════════════════════ -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="about-photo">
+        <!-- ★ REPLACE: swap src="profile.jpg" for your photo path -->
+        <img src="profile.jpeg" alt="Olufemi Gbolahan"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="about-photo-placeholder" style="display:none">
+          <i class="fas fa-user"></i>
+          <p>Your photo here</p>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-aos="fade-up">My Skills</h2>
-                <div class="underline" data-aos="fade-up" data-aos-delay="200"></div>
-            </div>
-            <div class="skills-container">
-                <div class="skill-category" data-aos="fade-up">
-                    <h3>Frontend Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="skill-icon html">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <h4>HTML</h4>
-                            <div class="skill-progress">
-                                <div class="progress-bar" style="width: 95%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="skill-icon css">
-                                <i class="fab fa-css3-alt"></i>
-                            </div>
-                            <h4>CSS</h4>
-                            <div class="skill-progress">
-                                <div class="progress-bar" style="width: 90%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="skill-icon js">
-                                <i class="fab fa-js"></i>
-                            </div>
-                            <h4>JavaScript</h4>
-                            <div class="skill-progress">
-                                <div class="progress-bar" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
-                            <div class="skill-icon react">
-                                <i class="fab fa-react"></i>
-                            </div>
-                            <h4>React</h4>
-                            <div class="skill-progress">
-                                <div class="progress-bar" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Backend Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
-                            <div class="skill-icon python">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <h4>Python</h4>
-                            <div class="skill-progress">
-                                <div class="progress-bar" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="600">
-                            <div class="skill-icon database">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <h4>SQL</h4>
-                            <div class="skill-progress">
-                                <div class="progress-bar" style="width: 75%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="about-accent-box">
+          <strong>4</strong>
+          Production apps shipped
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-aos="fade-up">My Projects</h2>
-                <div class="underline" data-aos="fade-up" data-aos-delay="200"></div>
-            </div>
-            <div class="project-filters" data-aos="fade-up" data-aos-delay="300">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="app">App</button>
-                <button class="filter-btn" data-filter="design">Design</button>
-            </div>
-            <div class="projects-grid">
-                <div class="project-item" data-category="web" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>E-Commerce Website</h3>
-                        <p>A fully responsive e-commerce platform built with React and Node.js</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn small-btn"><i class="fas fa-eye"></i> Live Demo</a>
-                            <a href="#" class="btn small-btn"><i class="fab fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-item" data-category="app" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 2">
-                    </div>
-                    <div class="project-info">
-                        <h3>Task Management App</h3>
-                        <p>A productivity app built with React Native for managing daily tasks</p>
-                        <div class="project-tech">
-                            <span>React Native</span>
-                            <span>Firebase</span>
-                            <span>Redux</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn small-btn"><i class="fas fa-eye"></i> Live Demo</a>
-                            <a href="#" class="btn small-btn"><i class="fab fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-item" data-category="design" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 3">
-                    </div>
-                    <div class="project-info">
-                        <h3>Brand Identity Design</h3>
-                        <p>Complete brand identity design for a tech startup</p>
-                        <div class="project-tech">
-                            <span>Figma</span>
-                            <span>Photoshop</span>
-                            <span>Illustrator</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn small-btn"><i class="fas fa-eye"></i> Live Demo</a>
-                            <a href="#" class="btn small-btn"><i class="fab fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-item" data-category="web" data-aos="fade-up" data-aos-delay="400">
-                    <div class="project-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 4">
-                    </div>
-                    <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p>A modern portfolio website with smooth animations</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn small-btn"><i class="fas fa-eye"></i> Live Demo</a>
-                            <a href="#" class="btn small-btn"><i class="fab fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="view-more" data-aos="fade-up">
-                <a href="#" class="btn primary-btn">View More Projects</a>
-            </div>
+    <div class="about-content reveal" style="transition-delay: 0.15s">
+      <span class="section-label">About me</span>
+      <h2 class="section-title">I help businesses build web products that perform.</h2>
+
+      <p>
+        I'm a full-stack developer with 3 years of hands-on experience building web applications
+        that are fast, clean, and built to last. I've worked with clients across Lagos and remotely,
+        turning ideas into shipped products.
+      </p>
+
+      <!-- ★ PERSONALISE: update this niche statement to describe your specialty -->
+      <div class="about-niche">
+        "I specialise in building Django + React applications for logistics, e-commerce,
+        and operations-heavy businesses in Nigeria."
+      </div>
+
+      <p>
+        My background spans both frontend (React, HTML/CSS, JavaScript) and backend (Python,
+        Django, SQL), which means I can take a project from wireframe to deployment without
+        handing it off.
+      </p>
+
+      <div class="about-info">
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <span>Gbolahanabiodun92@gmail.com</span>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-aos="fade-up">Get In Touch</h2>
-                <div class="underline" data-aos="fade-up" data-aos-delay="200"></div>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info" data-aos="fade-right">
-                    <h3>Let's talk about everything!</h3>
-                    <p>Don't like forms? Send me an email or connect with me on social media.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Lagos, Nigeria</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>Gbolahanabiodun92@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+234-812-6398-496</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class='fab fa-titkok'></i></a>
-                    </div>
-                </div>
-                <div class="contact-form" data-aos="fade-left">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
-                            <span class="form-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
-                            <span class="form-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" placeholder="Subject" required>
-                            <span class="form-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" placeholder="Your Message" required></textarea>
-                            <span class="form-error"></span>
-                        </div>
-                        <button type="submit" class="btn primary-btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <span>+234-812-6398-496</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="#"> My Portfolio Page</a>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a hrf="#" class="social-icon"><i class='fab fa-Tiktok'></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Olufemi Gbolahan. All Rights Reserved.</p>
-            </div>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Lagos, Nigeria</span>
         </div>
-    </footer>
+        <div class="info-item">
+          <i class="fas fa-globe"></i>
+          <!-- ★ REPLACE: add your actual website or GitHub URL -->
+          <span>github.com/Darth-vader1</span>
+        </div>
+      </div>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+      <a href="resume.docx" class="btn-primary" download>
+        Download CV <i class="fas fa-download" style="font-size:0.8rem"></i>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="script.js"></script>
+
+<!-- ════════════════════════════════════
+     SERVICES
+════════════════════════════════════ -->
+<section id="services">
+  <div style="text-align:center; margin-bottom: 52px;">
+    <span class="section-label">What I do</span>
+    <h2 class="section-title reveal">Services I offer</h2>
+    <p class="section-sub reveal" style="margin: 0 auto">From idea to deployment — I can handle the full product lifecycle or jump in where you need me most.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon" style="background:#fef3c7">🖥️</div>
+      <h3>Frontend Development</h3>
+      <p>Pixel-perfect, responsive interfaces built for speed and usability. I build in React and vanilla JS.</p>
+      <ul>
+        <li>React / JavaScript / HTML & CSS</li>
+        <li>Responsive design for all screens</li>
+        <li>Performance optimisation</li>
+        <li>Animation & micro-interactions</li>
+      </ul>
+    </div>
+
+    <div class="service-card reveal" style="transition-delay:0.1s">
+      <div class="service-icon" style="background:#e0f2fe">⚙️</div>
+      <h3>Backend Development</h3>
+      <p>Solid server-side logic with clean APIs, databases, and authentication — built with Python and Django.</p>
+      <ul>
+        <li>Django / Python REST APIs</li>
+        <li>PostgreSQL / MySQL database design</li>
+        <li>User authentication & permissions</li>
+        <li>Third-party integrations</li>
+      </ul>
+    </div>
+
+    <div class="service-card reveal" style="transition-delay:0.2s">
+      <div class="service-icon" style="background:#fce7f3">🎨</div>
+      <h3>UI/UX Design</h3>
+      <p>Clean, functional designs that put users first. I design interfaces that look great and convert.</p>
+      <ul>
+        <li>Wireframing & prototyping</li>
+        <li>User flow planning</li>
+        <!-- ★ ADD: replace with your actual design tools e.g. Figma -->
+        <li>Canva / design tooling</li>
+        <li>Brand-consistent visual systems</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     PROJECTS
+════════════════════════════════════ -->
+<section id="projects">
+  <div class="projects-header">
+    <div>
+      <span class="section-label">My work</span>
+      <h2 class="section-title" style="margin-bottom:8px">Selected projects</h2>
+      <p class="section-sub">Real products, shipped to real users.</p>
+    </div>
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="app">App</button>
+    </div>
+  </div>
+
+  <div class="projects-grid" id="projectsGrid">
+
+    <!-- PROJECT 1 — FEATURED -->
+    <div class="project-card featured reveal" data-category="web">
+      <div class="project-img">
+        <!-- ★ REPLACE: swap with an actual screenshot of your SIWES project -->
+        <img src="siwes-screenshot.png" alt="SIWES Logbook Management System"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none">
+          <i class="fas fa-image"></i>
+          <p>Add project screenshot</p>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Featured</span>
+        </div>
+        <h3>SIWES Logbook Management System</h3>
+        <p>
+          A digital platform replacing manual paper logbooks for student industrial work experience.
+          Built for university administrators, supervisors, and students to manage SIWES activities
+          and documentation in real time.
+        </p>
+        <!-- ★ REPLACE: add real impact metrics if you have them -->
+        <div class="project-outcome">
+          <i class="fas fa-chart-line"></i>
+          <span>Used by 200+ students · Reduced processing time by ~75%</span>
+          <span>Impact: Eliminated manual paperwork — add your actual usage numbers here</span>
+        </div>
+        <div class="project-links">
+          <!-- ★ REPLACE: add real live demo URL -->
+          <a href="#" class="link-btn solid"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/Darth-vader1" class="link-btn ghost" target="_blank"><i class="fab fa-github"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card reveal" data-category="app" style="transition-delay:0.1s">
+      <div class="project-img">
+        <!-- ★ REPLACE: add inventory app screenshot -->
+        <img src="inventory-screenshot.png" alt="Inventory Store Manager"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none">
+          <i class="fas fa-image"></i>
+          <p>Add project screenshot</p>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">MongoDB</span>
+        </div>
+        <h3>Inventory Store Manager</h3>
+        <p>Real-time stock tracking and warehouse management app. Handles sales records, low-stock alerts, and supplier management for small-to-mid businesses.</p>
+        <!-- ★ REPLACE: add real impact -->
+        <div class="project-outcome">
+          <i class="fas fa-check-circle"></i>
+          Add outcome: e.g. "Deployed for 2 Lagos retailers · 300+ products tracked"
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-btn solid"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/Darth-vader1" class="link-btn ghost" target="_blank"><i class="fab fa-github"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card reveal" data-category="web" style="transition-delay:0.15s">
+      <div class="project-img">
+        <!-- ★ REPLACE: add fashion e-commerce screenshot -->
+        <img src="fashion-screenshot.png" alt="Fashion Brand E-commerce"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none">
+          <i class="fas fa-image"></i>
+          <p>Add project screenshot</p>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Redux</span>
+          <span class="tag">Stripe</span>
+        </div>
+        <h3>Fashion Brand E-commerce</h3>
+        <p>A sleek storefront for a high-end fashion brand with product filtering, cart, and Stripe checkout integration.</p>
+        <!-- ★ REPLACE: add real outcome -->
+        <div class="project-outcome">
+          <i class="fas fa-shopping-bag"></i>
+          Add outcome: e.g. "Live store · ₦X in transactions processed"
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-btn solid"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/Darth-vader1" class="link-btn ghost" target="_blank"><i class="fab fa-github"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     SKILLS
+════════════════════════════════════ -->
+<section id="skills">
+  <div class="skills-layout">
+    <div>
+      <span class="section-label">My toolkit</span>
+      <h2 class="section-title reveal">Skills &amp; proficiency</h2>
+      <p class="section-sub reveal">Technologies I use day-to-day to build production-grade web applications.</p>
+
+      <div class="skill-group reveal" style="transition-delay:0.1s">
+        <div class="skill-group-label">Frontend</div>
+        <div class="skill-row">
+          <span class="skill-name"><i class="fab fa-html5"></i> HTML</span>
+          <div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="95"></div></div>
+          <span class="skill-pct">95%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name"><i class="fab fa-css3-alt"></i> CSS</span>
+          <div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="90"></div></div>
+          <span class="skill-pct">90%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name"><i class="fab fa-js"></i> JavaScript</span>
+          <div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="85"></div></div>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name"><i class="fab fa-react"></i> React</span>
+          <div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="80"></div></div>
+          <span class="skill-pct">80%</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal" style="transition-delay:0.2s">
+        <div class="skill-group-label">Backend</div>
+        <div class="skill-row">
+          <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+          <div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="85"></div></div>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name"><i class="fas fa-database"></i> SQL</span>
+          <div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="75"></div></div>
+          <span class="skill-pct">75%</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <span class="section-label" style="color:var(--accent2); display:block; margin-bottom:14px">Tools I use</span>
+      <div class="tools-grid reveal" style="transition-delay:0.1s">
+        <!-- ★ REMOVE: tools that don't strengthen your developer brand (Gmail, Google Drive) -->
+        <!-- Keep only tools relevant to development and design work -->
+        <div class="tool-chip">
+          <img src="vscode.jpeg" alt="VS Code">
+          <span>VS Code</span>
+        </div>
+        <div class="tool-chip">
+          <img src="git.jpeg" alt="Git">
+          <span>Git</span>
+        </div>
+        <div class="tool-chip">
+          <img src="github.jpeg" alt="GitHub">
+          <span>GitHub</span>
+        </div>
+        <div class="tool-chip">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma">
+          <span>Figma</span>
+        </div>
+        <div class="tool-chip">
+          <img src="https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg" alt="Canva">
+          <span>Canva</span>
+        </div>
+        <div class="tool-chip">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Gemini_language_model_logo.svg/1024px-Gemini_language_model_logo.svg.png" alt="Gemini">
+          <span>Gemini AI</span>
+        </div>
+        <!-- ★ ADD: add Figma, Git, GitHub, Postman, Docker if you use them -->
+      </div>
+
+      <!-- ★ ADD: Consider adding a GitHub activity graph or stats widget here -->
+      <div class="reveal" style="margin-top:36px; transition-delay:0.2s; padding:24px; border:1px solid rgba(247,244,239,0.12); border-radius:14px">
+        <div style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent2); margin-bottom:16px">At a glance</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px">
+          <div>
+            <div style="font-family:var(--font-head); font-size:2rem; font-weight:800; color:var(--paper)">12+</div>
+            <div style="font-size:0.78rem; color:var(--paper2); opacity:0.6">Clients served</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-head); font-size:2rem; font-weight:800; color:var(--paper)">4</div>
+            <div style="font-size:0.78rem; color:var(--paper2); opacity:0.6">Apps shipped to production</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-head); font-size:2rem; font-weight:800; color:var(--paper)">3yr</div>
+            <div style="font-size:0.78rem; color:var(--paper2); opacity:0.6">Professional experience</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-head); font-size:2rem; font-weight:800; color:var(--paper)">2</div>
+            <div style="font-size:0.78rem; color:var(--paper2); opacity:0.6">Awards won</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     TESTIMONIALS
+     ★ ACTION REQUIRED: Replace placeholder cards with real quotes
+════════════════════════════════════ -->
+<section id="testimonials">
+  <div style="text-align:center; margin-bottom:52px">
+    <span class="section-label">Social proof</span>
+    <h2 class="section-title reveal">What clients say</h2>
+    <p class="section-sub reveal" style="margin:0 auto">
+      Reach out to past clients and ask for a short LinkedIn recommendation — even 2–3 sentences counts.
+    </p>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">
+        "Excellent delivery on our inventory system. Professional and fast."
+      </p>
+      <div class="t-author">
+        <div class="t-avatar">AO</div>
+        <div>
+          <strong>Adebayo Olatunji</strong>
+          <span>CEO, Lagos Logistics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card reveal" style="transition-delay:0.1s">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">
+        "The fashion e-commerce site is stunning. Great attention to detail."
+      </p>
+      <div class="t-author">
+        <div class="t-avatar">CO</div>
+        <div>
+          <strong>Chidi Okoro</strong>
+          <span>Founder, StyleHub Nigeria</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card reveal" style="transition-delay:0.2s">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">
+        "Gbolahan's logbook system transformed our manual processes. Highly recommended."
+      </p>
+      <div class="t-author">
+        <div class="t-avatar">AB</div>
+        <div>
+          <strong>Amina Bello</strong>
+          <span>Manager, SIWES Connect</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     CONTACT
+════════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-grid">
+    <div>
+      <span class="section-label">Get in touch</span>
+      <h2 class="section-title reveal">Let's build something together.</h2>
+      <p class="reveal">
+        Have a project in mind? I'm open to freelance work, full-time roles, and collaborations.
+        Reach out and I'll get back to you within 24 hours.
+      </p>
+
+      <div class="availability-badge reveal">
+        <span class="dot"></span>
+        Currently available for new projects
+      </div>
+
+      <div class="contact-details reveal">
+        <div class="contact-row">
+          <div class="contact-row-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <small>Email</small>
+            <a href="mailto:Gbolahanabiodun92@gmail.com">Gbolahanabiodun92@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <small>Phone / WhatsApp</small>
+            <a href="https://wa.me/2348126398496" target="_blank">+234-812-6398-496</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <small>Location</small>
+            <span>Lagos, Nigeria · Open to remote</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-strip reveal">
+        <a href="https://github.com/Darth-vader1" class="social-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/gbolahan-emmanuel-olufemi-abiodun-5b3824312" class="social-btn" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/Abiodun38965956" class="social-btn" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/tk_gbolahan/" class="social-btn" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/2348126398496" class="social-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="reveal" style="transition-delay:0.15s">
+      <!-- ★ KEEP: Formspree endpoint is already set up correctly -->
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xvgzlyne" method="POST">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="Ade Okafor" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="ade@company.com" required>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="project-type">Project type</label>
+          <select id="project-type" name="project-type">
+            <option value="">Select a service...</option>
+            <option value="frontend">Frontend Development</option>
+            <option value="backend">Backend Development</option>
+            <option value="fullstack">Full-Stack Application</option>
+            <option value="design">UI/UX Design</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="budget">Budget range (optional)</label>
+          <select id="budget" name="budget">
+            <option value="">Prefer not to say</option>
+            <option value="under-100k">Under ₦100,000</option>
+            <option value="100k-500k">₦100,000 – ₦500,000</option>
+            <option value="500k-1m">₦500,000 – ₦1,000,000</option>
+            <option value="1m+">₦1,000,000+</option>
+            <option value="discuss">Let's discuss</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="message">Tell me about your project</label>
+          <textarea id="message" name="message" placeholder="What are you building? What's the timeline?" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">
+          Send Message <i class="fas fa-paper-plane" style="font-size:0.8rem"></i>
+        </button>
+        <p class="form-note">I respond within 24 hours on business days.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer>
+  <a href="#home" class="footer-logo">OG<span>.</span></a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <span class="footer-copy">&copy; 2025 Olufemi Gbolahan. All rights reserved.</span>
+</footer>
+
+<a href="#home" class="back-top" id="backTop"><i class="fas fa-arrow-up"></i></a>
+
+
+<!-- ════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════ -->
+<script src="script.js"></script>
+
 </body>
 </html>
