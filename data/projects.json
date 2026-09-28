@@ -1,0 +1,68 @@
+[
+  {
+    "id": "siwes-logbook",
+    "title": "SIWES Logbook Management System",
+    "category": "web",
+    "featured": true,
+    "image": "siwes-screenshot.png",
+    "tags": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "Featured"
+    ],
+    "description": "A digital platform replacing manual paper logbooks for student industrial work experience. Built for university administrators, supervisors, and students to manage SIWES activities and documentation in real time.",
+    "outcome": "Used by 200+ students · Reduced processing time by ~75%",
+    "demo_url": "https://youtu.be/cGeSqaggFXA",
+    "source_url": "https://github.com/Darth-vader1"
+  },
+  {
+    "id": "inventory-manager",
+    "title": "Inventory Store Manager",
+    "category": "app",
+    "featured": false,
+    "image": "inventory-screenshot.png",
+    "tags": [
+      "React",
+      "Node.js",
+      "MongoDB"
+    ],
+    "description": "Real-time stock tracking and warehouse management app. Handles sales records, low-stock alerts, and supplier management for small-to-mid businesses.",
+    "outcome": "Deployed for 2 Lagos retailers · 300+ products tracked",
+    "demo_url": "#",
+    "source_url": "https://github.com/Darth-vader1"
+  },
+  {
+    "id": "ican-management",
+    "title": "ICAN Management System",
+    "category": "web",
+    "featured": true,
+    "image": "ican-management-screenshot.jpeg",
+    "tags": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "React"
+    ],
+    "description": "A web-based management system for the Institute of Chartered Accountants of Nigeria, supporting member records and administrative workflows.",
+    "outcome": "Centralized member and administrative management",
+    "demo_url": "widerangepro.vercel.app",
+    "source_url": "https://github.com/Darth-vader1"
+  },
+    {
+    "id": "fashion-ecommerce",
+    "title": "Ifashion brand E-commerce",
+    "category": "web",
+    "featured": false,
+    "image": "fashion-screenshot.png",
+    "tags": [
+      "React",
+      "Redux",
+      "Stripe"
+    ],
+    "description": "A sleek storefront for a high-end fashion brand with product filtering, cart, and Stripe checkout integration.",
+    "outcome": "Live store · Seamless checkout integration",
+    "demo_url": "#",
+    "source_url": "https://github.com/Darth-vader1"
+  }
+]

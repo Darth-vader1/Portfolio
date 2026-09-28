@@ -1,0 +1,67 @@
+[
+  {
+    "id": "frontend",
+    "icon": "🖥️",
+    "icon_bg": "#fef3c7",
+    "title": "Frontend Development",
+    "description": "Pixel-perfect, responsive interfaces built for speed and usability. I build in React and vanilla JS.",
+    "features": [
+      "React / JavaScript / HTML & CSS",
+      "Responsive design for all screens",
+      "Performance optimisation",
+      "Animation & micro-interactions"
+    ]
+  },
+  {
+    "id": "backend",
+    "icon": "⚙️",
+    "icon_bg": "#e0f2fe",
+    "title": "Backend Development",
+    "description": "Solid server-side logic with clean APIs, databases, and authentication — built with Python and Django.",
+    "features": [
+      "Django / Python REST APIs",
+      "PostgreSQL / MySQL database design",
+      "User authentication & permissions",
+      "Third-party integrations"
+    ]
+  },
+  {
+    "id": "uiux",
+    "icon": "🎨",
+    "icon_bg": "#fce7f3",
+    "title": "UI/UX Design",
+    "description": "Clean, functional designs that put users first. I design interfaces that look great and convert.",
+    "features": [
+      "Wireframing & prototyping",
+      "User flow planning",
+      "Canva / design tooling",
+      "Brand-consistent visual systems"
+    ]
+  },
+  {
+    "id": "system-design",
+    "icon": "🏗️",
+    "icon_bg": "#ede9fe",
+    "title": "System Design",
+    "description": "Scalable, reliable system architectures designed to meet product requirements and grow with your users.",
+    "features": [
+      "Architecture planning and documentation",
+      "Scalability and reliability design",
+      "API and service design",
+      "Database and data-flow planning"
+    ]
+  },
+  {
+    "id": "cloud-computing",
+    "icon": "☁️",
+    "icon_bg": "#e0f2fe",
+    "title": "Cloud Computing",
+    "description": "Cloud infrastructure and deployment solutions that help applications run securely and reliably.",
+    "features": [
+      "Cloud infrastructure setup",
+      "Application deployment and hosting",
+      "Scalable cloud services",
+      "Monitoring and reliability basics"
+    ]
+  }
+]
