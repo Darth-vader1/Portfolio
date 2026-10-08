@@ -441,6 +441,15 @@ section { padding: 100px 48px; }
   font-size: 0.875rem;
   color: var(--ink2);
 }
+a.info-item {
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+a.info-item:hover {
+  color: var(--accent);
+  transform: translateX(3px);
+}
 .info-item i { color: var(--accent); width: 16px; }
 
 /* ── JOURNEY / TIMELINE ── */

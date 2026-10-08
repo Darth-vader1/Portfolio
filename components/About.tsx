@@ -33,22 +33,27 @@ export default function About({ bio }: AboutProps) {
           <p>{bio?.about_paragraph_2}</p>
 
           <div className="about-info">
-            <div className="info-item">
+            <a href={`mailto:${contact.email}`} className="info-item">
               <i className="fas fa-envelope"></i>
               <span>{contact.email}</span>
-            </div>
-            <div className="info-item">
+            </a>
+            <a href={`tel:${contact.phone.replace(/[^0-9+]/g, '')}`} className="info-item">
               <i className="fas fa-phone"></i>
               <span>{contact.phone}</span>
-            </div>
+            </a>
             <div className="info-item">
               <i className="fas fa-map-marker-alt"></i>
               <span>{contact.location}</span>
             </div>
-            <div className="info-item">
+            <a
+              href={contact.website.startsWith('http') ? contact.website : `https://${contact.website}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="info-item"
+            >
               <i className="fas fa-globe"></i>
               <span>{contact.website}</span>
-            </div>
+            </a>
           </div>
 
           <a href={getImageUrl(bio?.cv_file || 'resume.docx')} className="btn-primary" download>
