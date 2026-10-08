@@ -983,7 +983,7 @@ footer nav a:hover { opacity: 1; color: var(--accent2); }
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 0 24px; }
-  .nav-links { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--paper); flex-direction: column; padding: 24px; gap: 20px; border-bottom: 1px solid var(--border); }
+  .nav-links { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--paper); flex-direction: column; padding: 24px; gap: 20px; border-bottom: 1px solid var(--border); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
   .nav-links.open { display: flex; }
   .hamburger { display: flex; }
   #home { grid-template-columns: 1fr; padding: 80px 24px 60px; text-align: center; }
@@ -994,9 +994,10 @@ footer nav a:hover { opacity: 1; color: var(--accent2); }
   section { padding: 72px 24px; }
   .about-grid, .skills-layout, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .about-photo { aspect-ratio: 4/3; }
+  .about-info { grid-template-columns: 1fr; gap: 14px; }
   .services-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
-  .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+  .project-card.featured, .project-card-wrapper.featured { grid-column: span 1; grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   footer { flex-direction: column; text-align: center; padding: 36px 24px; }
@@ -1004,7 +1005,7 @@ footer nav a:hover { opacity: 1; color: var(--accent2); }
 }
 
 @media (max-width: 600px) {
-  .hero-left h1 { font-size: 2.4rem; }
+  .hero-left h1 { font-size: 2.2rem; }
   .tools-grid { grid-template-columns: repeat(2, 1fr); }
   .journey-line { left: 16px; }
   .journey-item.left, .journey-item.right {
@@ -1017,6 +1018,16 @@ footer nav a:hover { opacity: 1; color: var(--accent2); }
   .journey-item.left .journey-dot, .journey-item.right .journey-dot {
     left: 11px;
     right: auto;
+  }
+  .project-card-wrapper {
+    min-height: 520px;
+  }
+  .project-card-back {
+    padding: 24px 20px;
+  }
+  .info-item span {
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 }
 

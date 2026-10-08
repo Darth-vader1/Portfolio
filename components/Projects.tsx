@@ -234,7 +234,7 @@ export default function Projects({ projects }: ProjectsProps) {
             style={{
               background: 'var(--white)',
               borderRadius: '24px',
-              padding: '40px',
+              padding: 'clamp(24px, 5vw, 40px)',
               maxWidth: '680px',
               width: '100%',
               maxHeight: '90vh',
