@@ -8,6 +8,7 @@ export interface BioData {
   headline: string;
   name: string;
   role: string;
+  status_note?: string;
   subtext: string;
   hero_photo: string;
   cv_file: string;
@@ -54,6 +55,13 @@ export interface ProjectData {
   outcome: string;
   demo_url: string;
   source_url: string;
+  case_study?: {
+    problem: string;
+    role: string;
+    key_decisions: string;
+    result: string;
+    hindsight: string;
+  };
 }
 
 export interface SkillItem {
