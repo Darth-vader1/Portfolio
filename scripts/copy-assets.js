@@ -4,6 +4,9 @@ const path = require('path');
 const filesToCopy = [
   'myimage.JPG',
   'profile.jpeg',
+  'gbolahan.jpg',
+  'gbolahan.JPG',
+  'Gbolahan.jpg',
   'siwes-screenshot.png',
   'inventory-screenshot.png',
   'fashion-screenshot.png',
