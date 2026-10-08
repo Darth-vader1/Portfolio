@@ -3,26 +3,71 @@
     {
       "label": "Frontend",
       "items": [
-        { "name": "HTML", "icon": "fab fa-html5", "width": 95 },
-        { "name": "CSS", "icon": "fab fa-css3-alt", "width": 90 },
-        { "name": "JavaScript", "icon": "fab fa-js", "width": 85 },
-        { "name": "React", "icon": "fab fa-react", "width": 80 }
+        {
+          "name": "HTML",
+          "icon": "fab fa-html5",
+          "width": 95
+        },
+        {
+          "name": "CSS",
+          "icon": "fab fa-css3-alt",
+          "width": 90
+        },
+        {
+          "name": "JavaScript",
+          "icon": "fab fa-js",
+          "width": 85
+        },
+        {
+          "name": "React",
+          "icon": "fab fa-react",
+          "width": 80
+        }
       ]
     },
     {
       "label": "Backend",
       "items": [
-        { "name": "Python", "icon": "fab fa-python", "width": 85 },
-        { "name": "SQL", "icon": "fas fa-database", "width": 75 }
+        {
+          "name": "Python",
+          "icon": "fab fa-python",
+          "width": 85
+        },
+        {
+          "name": "SQL",
+          "icon": "fas fa-database",
+          "width": 75
+        }
       ]
+    },
+    {
+      "label": "Cloud Computing "
     }
   ],
   "tools": [
-    { "name": "VS Code", "image": "vscode.jpeg" },
-    { "name": "Git", "image": "git.jpeg" },
-    { "name": "GitHub", "image": "github.jpeg" },
-    { "name": "Figma", "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" },
-    { "name": "Canva", "image": "https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg" },
-    { "name": "Gemini AI", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Gemini_language_model_logo.svg/1024px-Gemini_language_model_logo.svg.png" }
+    {
+      "name": "VS Code",
+      "image": "vscode.jpeg"
+    },
+    {
+      "name": "Git",
+      "image": "git.jpeg"
+    },
+    {
+      "name": "GitHub",
+      "image": "github.jpeg"
+    },
+    {
+      "name": "Figma",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+    },
+    {
+      "name": "Canva",
+      "image": "https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg"
+    },
+    {
+      "name": "Gemini AI",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Gemini_language_model_logo.svg/1024px-Gemini_language_model_logo.svg.png"
+    }
   ]
 }

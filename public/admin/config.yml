@@ -1,0 +1,122 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public"
+public_folder: "/"
+
+collections:
+  - name: "bio"
+    label: "Bio & General Info"
+    files:
+      - file: "data/bio.json"
+        label: "Personal Profile & Bio"
+        name: "bio_details"
+        fields:
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Full Name", name: "name", widget: "string" }
+          - { label: "Role & Location", name: "role", widget: "string" }
+          - { label: "Subtext", name: "subtext", widget: "text" }
+          - { label: "Hero Photo", name: "hero_photo", widget: "image" }
+          - { label: "CV Document", name: "cv_file", widget: "file" }
+          - { label: "Experience Badge Text", name: "experience_years", widget: "string" }
+          - { label: "Clients Count Badge", name: "clients_count", widget: "string" }
+          - label: "Social Media Links"
+            name: "socials"
+            widget: "object"
+            fields:
+              - { label: "GitHub URL", name: "github", widget: "string" }
+              - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+              - { label: "Twitter/X URL", name: "twitter", widget: "string" }
+              - { label: "WhatsApp Link", name: "whatsapp", widget: "string" }
+          - { label: "About Photo", name: "about_photo", widget: "image" }
+          - { label: "Apps Shipped Count", name: "apps_shipped", widget: "string" }
+          - { label: "About Title", name: "about_title", widget: "string" }
+          - { label: "About Paragraph 1", name: "about_paragraph_1", widget: "text" }
+          - { label: "Niche Specialty Quote", name: "niche_statement", widget: "text" }
+          - { label: "About Paragraph 2", name: "about_paragraph_2", widget: "text" }
+          - label: "Contact Info"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Website / GitHub", name: "website", widget: "string" }
+          - label: "Marquee Skills List"
+            name: "marquee"
+            widget: "list"
+            field: { label: "Skill Tag", name: "tag", widget: "string" }
+
+  - name: "services"
+    label: "Services Offered"
+    files:
+      - file: "data/services.json"
+        label: "Services List"
+        name: "services_list"
+        fields:
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Emoji / Icon", name: "icon", widget: "string" }
+              - { label: "Icon Background Color", name: "icon_bg", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "text", widget: "text" }
+              - label: "Features List"
+                name: "features"
+                widget: "list"
+
+  - name: "projects"
+    label: "Selected Projects"
+    files:
+      - file: "data/projects.json"
+        label: "Projects List"
+        name: "projects_list"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Project ID", name: "id", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", options: ["web", "app"] }
+              - { label: "Is Featured?", name: "featured", widget: "boolean", default: false }
+              - { label: "Project Screenshot Image", name: "image", widget: "image" }
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Outcome / Impact Metric", name: "outcome", widget: "string" }
+              - { label: "Live Demo URL", name: "demo_url", widget: "string" }
+              - { label: "Source Code URL", name: "source_url", widget: "string" }
+
+  - name: "skills"
+    label: "Skills & Toolkit"
+    files:
+      - file: "data/skills.json"
+        label: "Skills & Tools"
+        name: "skills_data"
+        fields:
+          - label: "Skill Groups"
+            name: "groups"
+            widget: "list"
+            fields:
+              - { label: "Group Name (e.g., Frontend, Backend)", name: "label", widget: "string" }
+              - label: "Skill Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Skill Name", name: "name", widget: "string" }
+                  - { label: "FontAwesome Icon Class", name: "icon", widget: "string" }
+                  - { label: "Proficiency Percentage (0-100)", name: "width", widget: "number", value_type: "int" }
+          - label: "Tools List"
+            name: "tools"
+            widget: "list"
+            fields:
+              - { label: "Tool Name", name: "name", widget: "string" }
+              - { label: "Tool Image / SVG URL", name: "image", widget: "string" }

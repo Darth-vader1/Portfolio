@@ -1,15 +1,16 @@
-# Olufemi Gbolahan — Developer Portfolio & Decap CMS
+# Olufemi Gbolahan — Developer Portfolio (Next.js + Supabase Auth & Custom Admin Dashboard)
 
-This repository contains the full-stack developer portfolio for **Olufemi Gbolahan**, now powered by **Decap CMS** (a Git-based Headless Content Management System).
+This repository contains the full-stack developer portfolio for **Olufemi Gbolahan**, built with **Next.js (App Router)**, **TypeScript**, **React**, and integrated with **Supabase Authentication** & a custom **Admin Portal** (`/admin`).
 
 ---
 
 ## 🛠️ Tech Stack & Features
 
-- **Frontend**: HTML5, CSS3 (Custom Variables, Syne & DM Sans fonts, CSS Grid/Flexbox), Vanilla JS.
-- **Content Management System**: [Decap CMS](https://decapcms.org/) (formerly Netlify CMS).
-- **Data Format**: Dynamic `JSON` files stored under `data/` (`bio.json`, `projects.json`, `skills.json`, `services.json`).
-- **Contact Form**: Integrated with Formspree AJAX submission.
+- **Framework**: Next.js 14 (App Router) + TypeScript
+- **Database & Auth**: [Supabase](https://supabase.com/) (PostgreSQL Database & Email/Password Authentication)
+- **Admin Dashboard**: Custom protected dashboard at `/admin` (Tabbed editor for Bio, Projects, Services, Skills, and Contact Messages viewer)
+- **Styling & Fonts**: Google Fonts (`Syne` & `DM Sans`), CSS Variables, SVG noise texture overlay
+- **Contact Form**: Direct insertion into Supabase `contact_messages` table + Formspree backup
 
 ---
 
@@ -17,57 +18,85 @@ This repository contains the full-stack developer portfolio for **Olufemi Gbolah
 
 ```text
 portfolio/
-├── admin/
-│   ├── index.html        # Decap CMS admin app entry point
-│   └── config.yml        # CMS collections and field definitions
-├── data/
-│   ├── bio.json          # Hero info, bio text, social links, contact info
-│   ├── projects.json     # Selected portfolio projects
-│   ├── services.json     # Services offered
-│   └── skills.json       # Tech skills proficiency & tool chips
-├── index.html            # Portfolio frontend template
-├── styles.css            # Custom CSS styling
-├── script.js             # Dynamic CMS data loader & UI animations
-├── resume.docx           # Downloadable CV
-└── README.md
+├── app/
+│   ├── admin/
+│   │   ├── login/
+│   │   │   └── page.tsx        # Supabase Admin Login Page
+│   │   └── page.tsx            # Protected Admin Dashboard
+│   ├── layout.tsx              # Root Layout
+│   ├── page.tsx                # Main Portfolio Home Page
+│   └── globals.css             # Global Stylesheet
+├── components/
+│   ├── admin/                  # Dashboard editor components
+│   │   ├── BioEditor.tsx
+│   │   ├── ProjectsEditor.tsx
+│   │   ├── ServicesEditor.tsx
+│   │   ├── SkillsEditor.tsx
+│   │   └── MessagesViewer.tsx
+│   ├── Navbar.tsx
+│   ├── Hero.tsx
+│   ├── Marquee.tsx
+│   ├── About.tsx
+│   ├── Services.tsx
+│   ├── Projects.tsx
+│   ├── Skills.tsx
+│   ├── Testimonials.tsx
+│   ├── Contact.tsx             # Contact form writing to Supabase
+│   ├── Footer.tsx
+│   └── BackToTop.tsx
+├── lib/
+│   ├── supabase/
+│   │   ├── client.ts           # Browser Supabase Client
+│   │   └── server.ts           # Server Supabase Client
+│   └── content.ts              # Data fetcher & types
+├── data/                       # Local JSON content files (backup)
+├── .env.local                  # Supabase Credentials (URL & ANON KEY)
+├── supabase-schema.sql         # SQL Script to set up database tables
+├── package.json
+└── tsconfig.json
 ```
 
 ---
 
-## 🖥️ How to Use the CMS
+## 🔑 Supabase Setup Guide
 
-### 1. Local CMS Editing (Offline / Local Dev)
+### Step 1: Create a Supabase Project
+1. Sign up/log in at [supabase.com](https://supabase.com/).
+2. Create a new project.
+3. Go to **Project Settings > API** and copy your **Project URL** and **anon / public Key**.
 
-Decap CMS includes a local proxy server so you can test editing your content offline without pushing commits to GitHub first.
+### Step 2: Set Environment Variables
+Add your credentials to `.env.local`:
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+```
 
-1. Open your terminal in the portfolio directory.
-2. Start the local Decap server:
-   ```bash
-   npx decap-server
-   ```
-3. In another terminal (or live server extension), serve your portfolio website (e.g., using VS Code Live Server or Python HTTP server):
-   ```bash
-   python -m http.server 8000
-   ```
-4. Navigate to `http://localhost:8000/admin/` in your browser. You can now edit bio details, add new projects, update skills, and save changes locally into `data/*.json`!
+### Step 3: Run Database Setup Script
+1. In Supabase Dashboard, go to **SQL Editor**.
+2. Copy the entire contents of [supabase-schema.sql](file:///c:/Users/HP/Documents/job/portfolio/supabase-schema.sql) and paste it into the editor.
+3. Click **Run**. This will create the required tables (`bio`, `services`, `projects`, `skills`, `tools`, `contact_messages`) and Row-Level Security policies.
+
+### Step 4: Create Admin User Account
+1. In Supabase Dashboard, go to **Authentication > Users**.
+2. Click **Add User > Create User**.
+3. Enter your admin email and password. You can now use these credentials to log into `http://localhost:3000/admin/login`!
 
 ---
 
-### 2. Production CMS Setup (Hosting Options)
+## 🚀 Running the App
 
-#### Option A: Hosting on Netlify (Recommended - Simplest CMS Auth)
-1. Push your code to GitHub.
-2. Connect your repository to **Netlify**.
-3. In Netlify Dashboard:
-   - Go to **Site Settings > Identity** -> Click **Enable Identity**.
-   - Scroll to **Services > Git Gateway** -> Click **Enable Git Gateway**.
-   - Under **Identity > Registration**, set access to *Invite Only* (so only you can log into your admin panel).
-   - Invite yourself under **Identity > Invite Users**.
-4. Go to `https://your-portfolio-domain.netlify.app/admin/` to log in and manage your portfolio content live.
+```bash
+# 1. Install dependencies
+npm install
 
-#### Option B: Hosting on GitHub Pages / Vercel
-1. You can use **GitHub OAuth** with an authentication provider like `OAuth-Host` or Decap Auth for authentication.
-2. Direct edits in `data/*.json` or via `/admin/` will trigger automatic deployments.
+# 2. Run local development server
+npm run dev
+```
+
+Visit:
+- Portfolio Site: **`http://localhost:3000`**
+- Admin Portal: **`http://localhost:3000/admin/login`**
 
 ---
 
