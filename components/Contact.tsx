@@ -19,7 +19,7 @@ export default function Contact({ bio }: ContactProps) {
     const form = e.currentTarget;
     const formData = new FormData(form);
     setSubmitting(true);
-    setButtonText('Sending…');
+    setButtonText('Sending message…');
 
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
@@ -28,12 +28,12 @@ export default function Contact({ bio }: ContactProps) {
     const message = formData.get('message') as string;
 
     try {
-      // 1. Try posting to Supabase contact_messages table
+      // 1. Store message in Supabase contact_messages table
       const { error } = await supabase.from('contact_messages').insert([
         { name, email, project_type, budget, message },
       ]);
 
-      // 2. Also post to Formspree endpoint as backup if configured
+      // 2. Send to Formspree endpoint as secondary notification delivery
       if (form.action && form.action.includes('formspree')) {
         await fetch(form.action, {
           method: 'POST',
@@ -42,7 +42,7 @@ export default function Contact({ bio }: ContactProps) {
         }).catch(() => {});
       }
 
-      setButtonText('✓ Message sent!');
+      setButtonText("✓ Message Received! I'll reply within 24h");
       setButtonBg('#22c55e');
       form.reset();
       setTimeout(() => {
@@ -51,36 +51,40 @@ export default function Contact({ bio }: ContactProps) {
         setSubmitting(false);
       }, 4000);
     } catch {
-      setButtonText('Failed — try email directly');
+      setButtonText('Failed — send email directly');
       setButtonBg('#ef4444');
       setSubmitting(false);
     }
   };
 
+  const email = bio?.contact?.email || 'Gbolahanabiodun92@gmail.com';
+  const phone = bio?.contact?.phone || '+234-812-6398-496';
+  const location = bio?.contact?.location || 'Lagos, Nigeria';
+  const socials = bio?.socials || { github: '', linkedin: '', twitter: '', whatsapp: '' };
+
   return (
     <section id="contact">
       <div className="contact-grid">
         <div>
-          <span className="section-label">Get in touch</span>
-          <h2 className="section-title reveal visible">Let's build something together.</h2>
-          <p className="reveal visible">
-            Have a project in mind? I'm open to freelance work, full-time roles, and collaborations.
-            Reach out and I'll get back to you within 24 hours.
+          <span className="section-label">Say Hello</span>
+          <h2 className="section-title reveal visible">Let's build something worth talking about.</h2>
+          <p className="reveal visible" style={{ fontSize: '1rem', lineHeight: '1.7' }}>
+            Got a project idea, a manual workflow headache, or just want to discuss tech, Django querysets, or Lagos spots? Drop a line below — I read every message.
           </p>
 
-          <div className="availability-badge reveal visible">
+          <div className="availability-badge reveal visible" style={{ marginTop: '20px' }}>
             <span className="dot"></span>
-            Currently available for new projects
+            Currently available for freelance projects &amp; full-time roles
           </div>
 
-          <div className="contact-details reveal visible">
+          <div className="contact-details reveal visible" style={{ marginTop: '28px' }}>
             <div className="contact-row">
               <div className="contact-row-icon">
                 <i className="fas fa-envelope"></i>
               </div>
               <div>
-                <small>Email</small>
-                <a href={`mailto:${bio.contact.email}`}>{bio.contact.email}</a>
+                <small>Direct Email</small>
+                <a href={`mailto:${email}`}>{email}</a>
               </div>
             </div>
             <div className="contact-row">
@@ -89,8 +93,8 @@ export default function Contact({ bio }: ContactProps) {
               </div>
               <div>
                 <small>Phone / WhatsApp</small>
-                <a href={bio.socials.whatsapp} target="_blank" rel="noopener noreferrer">
-                  {bio.contact.phone}
+                <a href={socials.whatsapp || `https://wa.me/2348126398496`} target="_blank" rel="noopener noreferrer">
+                  {phone}
                 </a>
               </div>
             </div>
@@ -100,29 +104,29 @@ export default function Contact({ bio }: ContactProps) {
               </div>
               <div>
                 <small>Location</small>
-                <span>{bio.contact.location} · Open to remote</span>
+                <span>{location} · Open to remote worldwide</span>
               </div>
             </div>
           </div>
 
           <div className="social-strip reveal visible">
-            {bio.socials.github && (
-              <a href={bio.socials.github} className="social-btn" target="_blank" rel="noopener noreferrer" title="GitHub">
+            {socials.github && (
+              <a href={socials.github} className="social-btn" target="_blank" rel="noopener noreferrer" title="GitHub">
                 <i className="fab fa-github"></i>
               </a>
             )}
-            {bio.socials.linkedin && (
-              <a href={bio.socials.linkedin} className="social-btn" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            {socials.linkedin && (
+              <a href={socials.linkedin} className="social-btn" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                 <i className="fab fa-linkedin"></i>
               </a>
             )}
-            {bio.socials.twitter && (
-              <a href={bio.socials.twitter} className="social-btn" target="_blank" rel="noopener noreferrer" title="Twitter">
+            {socials.twitter && (
+              <a href={socials.twitter} className="social-btn" target="_blank" rel="noopener noreferrer" title="Twitter">
                 <i className="fab fa-twitter"></i>
               </a>
             )}
-            {bio.socials.whatsapp && (
-              <a href={bio.socials.whatsapp} className="social-btn" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+            {socials.whatsapp && (
+              <a href={socials.whatsapp} className="social-btn" target="_blank" rel="noopener noreferrer" title="WhatsApp">
                 <i className="fab fa-whatsapp"></i>
               </a>
             )}
@@ -139,42 +143,41 @@ export default function Contact({ bio }: ContactProps) {
           >
             <div className="form-row">
               <div className="form-field">
-                <label htmlFor="name">Your name</label>
+                <label htmlFor="name">Your Name</label>
                 <input type="text" id="name" name="name" placeholder="Ade Okafor" required />
               </div>
               <div className="form-field">
-                <label htmlFor="email">Email address</label>
-                <input type="email" id="email" name="email" placeholder="ade@company.com" required />
+                <label htmlFor="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="ade@awesomecompany.com" required />
               </div>
             </div>
             <div className="form-field">
-              <label htmlFor="project-type">Project type</label>
+              <label htmlFor="project-type">What are we building?</label>
               <select id="project-type" name="project-type">
                 <option value="">Select a service...</option>
-                <option value="frontend">Frontend Development</option>
-                <option value="backend">Backend Development</option>
-                <option value="fullstack">Full-Stack Application</option>
-                <option value="design">UI/UX Design</option>
-                <option value="other">Other</option>
+                <option value="frontend">Frontend Application (React)</option>
+                <option value="backend">Backend &amp; API (Python/Django)</option>
+                <option value="fullstack">Full-Stack Django + React Product</option>
+                <option value="design">UI/UX Design &amp; Prototyping</option>
+                <option value="other">Just saying hi / Other</option>
               </select>
             </div>
             <div className="form-field">
-              <label htmlFor="budget">Budget range (optional)</label>
+              <label htmlFor="budget">Estimated Budget (Optional)</label>
               <select id="budget" name="budget">
-                <option value="">Prefer not to say</option>
+                <option value="">Prefer not to say / Let's discuss</option>
                 <option value="under-100k">Under ₦100,000</option>
                 <option value="100k-500k">₦100,000 – ₦500,000</option>
                 <option value="500k-1m">₦500,000 – ₦1,000,000</option>
                 <option value="1m+">₦1,000,000+</option>
-                <option value="discuss">Let's discuss</option>
               </select>
             </div>
             <div className="form-field">
-              <label htmlFor="message">Tell me about your project</label>
+              <label htmlFor="message">Tell me about your vision</label>
               <textarea
                 id="message"
                 name="message"
-                placeholder="What are you building? What's the timeline?"
+                placeholder="What problem are you trying to solve? What does success look like? What's the timeline?"
                 required
               ></textarea>
             </div>
@@ -184,10 +187,9 @@ export default function Contact({ bio }: ContactProps) {
               disabled={submitting}
               style={buttonBg ? { background: buttonBg } : {}}
             >
-              {buttonText}{' '}
-              <i className="fas fa-paper-plane" style={{ fontSize: '0.8rem' }}></i>
+              {buttonText} <i className="fas fa-paper-plane" style={{ fontSize: '0.8rem' }}></i>
             </button>
-            <p className="form-note">I respond within 24 hours on business days.</p>
+            <p className="form-note">I respond within 24 hours on business days. No spam, ever.</p>
           </form>
         </div>
       </div>

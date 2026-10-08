@@ -77,6 +77,14 @@ export interface SkillsData {
   tools: ToolItem[];
 }
 
+export function getImageUrl(src?: string): string {
+  if (!src) return '';
+  if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('/')) {
+    return src;
+  }
+  return `/${src}`;
+}
+
 export function getBioData(): BioData {
   return bioData as BioData;
 }

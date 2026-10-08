@@ -1,10 +1,11 @@
 {
-  "tagline": "Available for freelance & full-time roles",
+  "tagline": "Available for freelance, full-time roles & engineering collaborations",
   "headline": "Building web products that actually work.",
-  "name": "Olufemi Gbolahan  Abiodun",
-  "role": "full-stack web developer based in Lagos, Nigeria",
-  "subtext": "I design and build fast, modern web applications for businesses and startups.",
-  "hero_photo": "myimage.JPG",
+  "name": "Olufemi Gbolahan",
+  "role": "full-stack engineer based in Lagos, Nigeria",
+  "status_note": "CS Student & Full-Stack Engineer — Open to full-time roles, internships & freelance contracts",
+  "subtext": "Full-stack engineer building fast, modern web applications that solve real operational headaches.",
+  "hero_photo": "profile.jpeg",
   "cv_file": "resume.docx",
   "experience_years": "3 Years Experience",
   "clients_count": "12+",
@@ -14,12 +15,12 @@
     "twitter": "https://x.com/Abiodun38965956",
     "whatsapp": "https://wa.me/2348126398496"
   },
-  "about_photo": "profile.jpeg",
+  "about_photo": "gbolahan.jpg",
   "apps_shipped": "4",
-  "about_title": "I help businesses build web products that perform.",
-  "about_paragraph_1": "I'm a full-stack developer with 3 years of hands-on experience building web applications that are fast, clean, and built to last. I've worked with clients across Lagos and remotely, turning ideas into shipped products.",
-  "niche_statement": "I specialise in building Django + React applications for logistics, e-commerce, and operations-heavy businesses in Nigeria.",
-  "about_paragraph_2": "My background spans both frontend (React, HTML/CSS, JavaScript) and backend (Python, Django, SQL), which means I can take a project from wireframe to deployment without handing it off.",
+  "about_title": "I turn complex operational headaches into software that feels effortless.",
+  "about_paragraph_1": "I'm a full-stack engineer with 3 years of hands-on experience building software that lasts. I don't just write code — I care deeply about how users feel when using a product. From wireframe to final deployment, I make sure everything runs smoothly.",
+  "niche_statement": "My rule of thumb: If a process takes more than 3 clicks or relies on manual paperwork, it's begging for a Django + React application.",
+  "about_paragraph_2": "My background spans both frontend (React, JavaScript, modern UI/UX) and backend (Python, Django REST framework, SQL), which means I can build complete, end-to-end applications without handing off mid-project.",
   "contact": {
     "email": "Gbolahanabiodun92@gmail.com",
     "phone": "+234-812-6398-496",
@@ -27,13 +28,13 @@
     "website": "github.com/Darth-vader1"
   },
   "marquee": [
-    "Frontend Development",
-    "Backend Development",
-    "React Applications",
-    "Django & Python",
-    "Database Design",
-    "REST APIs",
-    "UI/UX Design",
-    "Lagos · Nigeria · Remote"
+    "Python & Django Specialist",
+    "React Frontend Engineer",
+    "Full-Stack Web Applications",
+    "Logistics & E-commerce",
+    "Database Design & SQL",
+    "REST APIs & Integrations",
+    "Lagos · Nigeria · Remote",
+    "Production Grade Code"
   ]
 }

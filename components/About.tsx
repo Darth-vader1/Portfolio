@@ -1,4 +1,4 @@
-import { BioData } from '@/lib/content';
+import { BioData, getImageUrl } from '@/lib/content';
 
 interface AboutProps {
   bio: BioData;
@@ -12,7 +12,7 @@ export default function About({ bio }: AboutProps) {
       <div className="about-grid">
         <div className="reveal visible">
           <div className="about-photo">
-            <img src={bio?.about_photo || 'profile.jpeg'} alt={bio?.name || 'About'} />
+            <img src={getImageUrl(bio?.about_photo || 'profile.jpeg')} alt={bio?.name || 'About'} />
             <div className="about-accent-box">
               <strong>{bio?.apps_shipped || '4'}</strong>
               Production apps shipped
@@ -51,7 +51,7 @@ export default function About({ bio }: AboutProps) {
             </div>
           </div>
 
-          <a href={bio?.cv_file || 'resume.docx'} className="btn-primary" download>
+          <a href={getImageUrl(bio?.cv_file || 'resume.docx')} className="btn-primary" download>
             Download CV <i className="fas fa-download" style={{ fontSize: '0.8rem' }}></i>
           </a>
         </div>

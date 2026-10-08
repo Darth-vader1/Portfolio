@@ -1,5 +1,29 @@
 [
   {
+    "id": "ican-management-system",
+    "title": "ICAN Management System",
+    "category": "web",
+    "featured": true,
+    "image": "siwes-screenshot.png",
+    "tags": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "Featured App"
+    ],
+    "description": "A comprehensive web application designed for ICAN (Institute of Chartered Accountants of Nigeria) operations. Streamlines student registrations, exam records, administrative workflows, and certification verification in real time.",
+    "outcome": "Impact: Automated ICAN records & reduced administrative processing overhead",
+    "demo_url": "#",
+    "source_url": "https://github.com/Darth-vader1",
+    "case_study": {
+      "problem": "Manual student registration and paper records caused delays in processing certification verifications and exam rosters.",
+      "role": "Lead Full-Stack Engineer (Solo Build)",
+      "key_decisions": "Chose Django REST framework for robust ORM security, role-based permission access control, and PostgreSQL relational data integrity.",
+      "result": "Automated student record tracking and reduced administrative verification processing time.",
+      "hindsight": "If rebuilding today, I would implement automated Redis caching for frequent student verification lookups."
+    }
+  },
+  {
     "id": "siwes-logbook",
     "title": "SIWES Logbook Management System",
     "category": "web",
@@ -9,12 +33,19 @@
       "Python",
       "Django",
       "PostgreSQL",
-      "Featured"
+      "Flagship Project"
     ],
-    "description": "A digital platform replacing manual paper logbooks for student industrial work experience. Built for university administrators, supervisors, and students to manage SIWES activities and documentation in real time.",
-    "outcome": "Used by 200+ students · Reduced processing time by ~75%",
+    "description": "A digital platform replacing manual paper logbooks for student industrial work experience. Built for university administrators, supervisors, and students to record daily activities and sign off documentation in real time.",
+    "outcome": "Impact: Used by 200+ students · Reduced processing & sign-off time by ~75%",
     "demo_url": "https://youtu.be/cGeSqaggFXA",
-    "source_url": "https://github.com/Darth-vader1"
+    "source_url": "https://github.com/Darth-vader1",
+    "case_study": {
+      "problem": "University students used physical paper logbooks that were frequently lost, damaged, or delayed in manual sign-offs by supervisors.",
+      "role": "Full-Stack Software Engineer",
+      "key_decisions": "Architected a dual-portal Django application with instant digital signature approvals and PDF logbook exports for academic records.",
+      "result": "Adopted by 200+ active students, cutting sign-off turnaround time by ~75% and eliminating physical paperwork loss.",
+      "hindsight": "I would add offline-first Progressive Web App (PWA) sync so students in low-connectivity areas can log entries offline."
+    }
   },
   {
     "id": "inventory-manager",
@@ -25,44 +56,43 @@
     "tags": [
       "React",
       "Node.js",
-      "MongoDB"
+      "MongoDB",
+      "Real-Time Stock"
     ],
-    "description": "Real-time stock tracking and warehouse management app. Handles sales records, low-stock alerts, and supplier management for small-to-mid businesses.",
-    "outcome": "Deployed for 2 Lagos retailers · 300+ products tracked",
+    "description": "Real-time stock tracking and warehouse management app. Built to help small-to-mid businesses eliminate stock loss, automate re-order alerts, and track sales receipts.",
+    "outcome": "Impact: Deployed for 2 Lagos retailers · 300+ products tracked",
     "demo_url": "#",
-    "source_url": "https://github.com/Darth-vader1"
+    "source_url": "https://github.com/Darth-vader1",
+    "case_study": {
+      "problem": "Retail store owners experienced stock discrepancies and missed re-stocking deadlines due to pen-and-paper inventory management.",
+      "role": "Frontend & Backend Developer",
+      "key_decisions": "Built a fast React dashboard with WebSocket real-time low-stock alerts and automated sales receipt generation.",
+      "result": "Deployed live for 2 Lagos retail outlets, tracking 300+ product SKUs with zero unrecorded inventory leakage.",
+      "hindsight": "I would migrate to PostgreSQL for stricter transactional consistency across multi-store inventory transfers."
+    }
   },
   {
-    "id": "ican-management",
-    "title": "ICAN Management System",
-    "category": "web",
-    "featured": true,
-    "image": "ican-management-screenshot.jpeg",
-    "tags": [
-      "Python",
-      "Django",
-      "PostgreSQL",
-      "React"
-    ],
-    "description": "A web-based management system for the Institute of Chartered Accountants of Nigeria, supporting member records and administrative workflows.",
-    "outcome": "Centralized member and administrative management",
-    "demo_url": "widerangepro.vercel.app",
-    "source_url": "https://github.com/Darth-vader1"
-  },
-    {
     "id": "fashion-ecommerce",
-    "title": "Ifashion brand E-commerce",
+    "title": "Fashion Brand E-commerce",
     "category": "web",
     "featured": false,
     "image": "fashion-screenshot.png",
     "tags": [
       "React",
       "Redux",
-      "Stripe"
+      "Stripe",
+      "E-Commerce"
     ],
-    "description": "A sleek storefront for a high-end fashion brand with product filtering, cart, and Stripe checkout integration.",
-    "outcome": "Live store · Seamless checkout integration",
+    "description": "A sleek storefront for a high-end fashion brand featuring interactive product filtering, instant cart management, and secure checkout integration.",
+    "outcome": "Impact: Live store · Seamless multi-currency payment checkout",
     "demo_url": "#",
-    "source_url": "https://github.com/Darth-vader1"
+    "source_url": "https://github.com/Darth-vader1",
+    "case_study": {
+      "problem": "Fashion brand needed a fast, high-converting digital storefront capable of handling surge traffic during drop releases.",
+      "role": "Frontend Engineer & Checkout Integration Specialist",
+      "key_decisions": "Implemented Redux Toolkit state management for instant cart updates and optimized image lazy-loading.",
+      "result": "Delivered a high-speed shopping experience with secure payment processing.",
+      "hindsight": "I would leverage Next.js App Router Server Components for instant Server-Side Rendered (SSR) product pages."
+    }
   }
 ]

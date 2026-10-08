@@ -8,6 +8,7 @@ import {
 import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
 import About from '@/components/About';
+import Journey from '@/components/Journey';
 import Services from '@/components/Services';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
@@ -25,6 +26,7 @@ export default function HomePage() {
       <Hero bio={bio} />
       <Marquee items={bio.marquee} />
       <About bio={bio} />
+      <Journey />
       <Services services={services} />
       <Projects projects={projects} />
       <Skills skillsData={skillsData} />

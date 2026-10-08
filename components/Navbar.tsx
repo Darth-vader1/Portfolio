@@ -36,6 +36,11 @@ export default function Navbar() {
           </a>
         </li>
         <li>
+          <a href="#journey" onClick={closeMenu}>
+            Journey
+          </a>
+        </li>
+        <li>
           <a href="#projects" onClick={closeMenu}>
             Work
           </a>

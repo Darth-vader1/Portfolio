@@ -1,4 +1,4 @@
-import { BioData } from '@/lib/content';
+import { BioData, getImageUrl } from '@/lib/content';
 
 interface HeroProps {
   bio: BioData;
@@ -27,11 +27,31 @@ export default function Hero({ bio }: HeroProps) {
           I'm <strong>{bio?.name || 'Olufemi Gbolahan'}</strong> — {bio?.role}. {bio?.subtext}
         </p>
 
+        {bio?.status_note && (
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '6px 14px',
+              borderRadius: '8px',
+              background: 'var(--paper2)',
+              border: '1px solid var(--border)',
+              fontSize: '0.78rem',
+              fontWeight: 500,
+              color: 'var(--accent)',
+              marginBottom: '28px',
+            }}
+          >
+            <i className="fas fa-graduation-cap"></i> {bio.status_note}
+          </div>
+        )}
+
         <div className="hero-actions">
           <a href="#projects" className="btn-primary">
             See My Work <i className="fas fa-arrow-right" style={{ fontSize: '0.8rem' }}></i>
           </a>
-          <a href={bio?.cv_file || 'resume.docx'} className="btn-outline" download>
+          <a href={getImageUrl(bio?.cv_file || 'resume.docx')} className="btn-outline" download>
             Download CV
           </a>
         </div>
@@ -64,10 +84,12 @@ export default function Hero({ bio }: HeroProps) {
       <div className="hero-right">
         <div className="hero-photo-wrap">
           <div className="hero-photo-frame">
-            <img src={bio?.hero_photo || 'myimage.JPG'} alt={bio?.name || 'Profile'} />
+            <img src={getImageUrl('profile.jpeg')} alt={bio?.name || 'Olufemi Gbolahan'} />
           </div>
           <div className="hero-badge">
-            <div className="hero-badge-icon">🚀</div>
+            <div className="hero-badge-icon">
+              <i className="fas fa-code" style={{ color: 'var(--accent)' }}></i>
+            </div>
             <div className="hero-badge-text">
               <strong>{bio?.experience_years || '3 Years Experience'}</strong>
               <span>Frontend &amp; Backend</span>

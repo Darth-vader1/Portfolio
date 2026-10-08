@@ -1,66 +1,70 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { SkillsData } from '@/lib/content';
+import { SkillsData, getImageUrl } from '@/lib/content';
 
 interface SkillsProps {
   skillsData: SkillsData;
 }
 
 export default function Skills({ skillsData }: SkillsProps) {
-  const [animated, setAnimated] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setAnimated(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const groups = skillsData?.groups || [];
   const tools = skillsData?.tools || [];
 
+  const techStack = [
+    {
+      category: 'Frontend Engineering',
+      icon: 'fab fa-react',
+      skills: ['React', 'Next.js (App Router)', 'TypeScript', 'JavaScript (ES6+)', 'HTML5 & CSS3', 'Tailwind CSS', 'Redux Toolkit'],
+    },
+    {
+      category: 'Backend & APIs',
+      icon: 'fab fa-python',
+      skills: ['Python', 'Django Framework', 'Django REST Framework', 'Node.js', 'RESTful API Architecture', 'JWT & OAuth Auth'],
+    },
+    {
+      category: 'Databases & Storage',
+      icon: 'fas fa-database',
+      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Supabase', 'Redis Caching', 'Database Schema Design'],
+    },
+    {
+      category: 'Cloud, DevOps & Tooling',
+      icon: 'fas fa-cloud',
+      skills: ['Git & GitHub', 'AWS (EC2, S3)', 'Vercel / Render Deployment', 'Docker (Basic)', 'VS Code', 'Postman API Testing'],
+    },
+  ];
+
   return (
-    <section id="skills" ref={sectionRef}>
+    <section id="skills">
       <div className="skills-layout">
         <div>
-          <span className="section-label">My toolkit</span>
-          <h2 className="section-title reveal visible">Skills &amp; proficiency</h2>
+          <span className="section-label">MY TOOLKIT</span>
+          <h2 className="section-title reveal visible">Technologies &amp; Architecture</h2>
           <p className="section-sub reveal visible">
-            Technologies I use day-to-day to build production-grade web applications.
+            Battle-tested technologies I use day-to-day to build production-grade web applications.
           </p>
 
-          {groups.map((group, gIdx) => (
+          {techStack.map((group, gIdx) => (
             <div className="skill-group reveal visible" key={gIdx}>
-              <div className="skill-group-label">{group.label}</div>
-              {(group.items || []).map((item, iIdx) => (
-                <div className="skill-row" key={iIdx}>
-                  <span className="skill-name">
-                    <i className={item.icon}></i> {item.name}
+              <div className="skill-group-label" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <i className={group.icon}></i> {group.category}
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '12px' }}>
+                {group.skills.map((skill, sIdx) => (
+                  <span
+                    key={sIdx}
+                    style={{
+                      background: 'rgba(247,244,239,0.08)',
+                      border: '1px solid rgba(247,244,239,0.15)',
+                      padding: '6px 14px',
+                      borderRadius: '100px',
+                      fontSize: '0.82rem',
+                      fontWeight: 500,
+                      color: 'var(--paper2)',
+                    }}
+                  >
+                    {skill}
                   </span>
-                  <div className="skill-bar-wrap">
-                    <div
-                      className="skill-bar-fill"
-                      style={{ width: animated ? `${item.width}%` : '0%' }}
-                    ></div>
-                  </div>
-                  <span className="skill-pct">{item.width}%</span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -70,12 +74,12 @@ export default function Skills({ skillsData }: SkillsProps) {
             className="section-label"
             style={{ color: 'var(--accent2)', display: 'block', marginBottom: '14px' }}
           >
-            Tools I use
+            Design &amp; Dev Tools
           </span>
           <div className="tools-grid reveal visible">
             {tools.map((tool, tIdx) => (
               <div className="tool-chip" key={tIdx}>
-                <img src={tool.image} alt={tool.name} />
+                <img src={getImageUrl(tool.image)} alt={tool.name} />
                 <span>{tool.name}</span>
               </div>
             ))}
@@ -160,7 +164,7 @@ export default function Skills({ skillsData }: SkillsProps) {
                   2
                 </div>
                 <div style={{ fontSize: '0.78rem', color: 'var(--paper2)', opacity: 0.6 }}>
-                  Awards won
+                  Awards won (Hackathon &amp; Tech)
                 </div>
               </div>
             </div>
