@@ -18,19 +18,54 @@ import MessagesViewer from '@/components/admin/MessagesViewer';
 
 export default function AdminDashboardPage() {
   const [activeTab, setActiveTab] = useState<'bio' | 'projects' | 'services' | 'skills' | 'messages'>('bio');
+  const [loading, setLoading] = useState(true);
+  const [authenticated, setAuthenticated] = useState(false);
   const router = useRouter();
   const supabase = createClient();
+
+  useEffect(() => {
+    async function checkAuth() {
+      const { data: { user }, error } = await supabase.auth.getUser();
+      if (error || !user) {
+        setAuthenticated(false);
+        router.replace('/admin/login');
+      } else {
+        setAuthenticated(true);
+      }
+      setLoading(false);
+    }
+    checkAuth();
+  }, [router, supabase]);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    router.replace('/admin/login');
+    router.refresh();
+  };
+
+  if (loading) {
+    return (
+      <div style={{ minHeight: '100vh', background: 'var(--paper)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '16px' }}>
+        <div style={{ width: '36px', height: '36px', border: '3px solid var(--border)', borderTopColor: 'var(--accent)', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }}></div>
+        <p style={{ fontSize: '0.9rem', color: 'var(--ink2)', fontFamily: 'var(--font-head)' }}>Verifying admin authentication...</p>
+        <style jsx>{`
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}</style>
+      </div>
+    );
+  }
+
+  if (!authenticated) {
+    return null;
+  }
 
   const bio = getBioData();
   const services = getServicesData();
   const projects = getProjectsData();
   const skillsData = getSkillsData();
-
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    router.push('/admin/login');
-    router.refresh();
-  };
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--paper)', padding: '40px 24px' }}>
