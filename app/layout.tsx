@@ -21,6 +21,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: 'Olufemi Gbolahan — Full-Stack Web Developer',
   description: 'Full-stack web developer based in Lagos, Nigeria specializing in fast, modern web applications built with React, Python, Django, and SQL.',
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
